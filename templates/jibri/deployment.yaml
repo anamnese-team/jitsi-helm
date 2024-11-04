@@ -116,6 +116,16 @@ spec:
         - name: dev-shm
           mountPath: /dev/shm
         {{- end }}
+      
+      {{- with .Values.jibri.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      
+      {{- with .Values.jibri.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
 
       volumes:
       - name: config

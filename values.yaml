@@ -470,6 +470,10 @@ jibri:
     other:
       _finalize_sh: ""
 
+  nodeSelector: {}
+
+  tolerations: []
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
